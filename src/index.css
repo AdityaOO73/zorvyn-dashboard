@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #1a56db;
+
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --surface: #f1f5f9;
+  --surface2: #e2e8f0;
+
+  --text: #1e293b;
+  --muted: #64748b;
+  --border: #e5e7eb;
+}
+
+
+.dark {
+  --primary: #6366f1;
+
+  --bg: #020617;
+  --card: #0f172a;
+  --surface: #111827;
+  --surface2: #1f2937;
+
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --border: #1f2937;
+}
+
+
+html,
+body,
+#root {
+  background: var(--bg);
+  color: var(--text);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+
+.recharts-wrapper:focus,
+.recharts-layer:focus,
+.recharts-sector:focus,
+svg:focus {
+  outline: none !important;
+}
+
+* {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
