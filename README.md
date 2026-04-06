@@ -226,27 +226,40 @@ Ensures:
 ## 📂 Project Structure
 
 ```bash id="struct-final"
-ZORVYN/
-└─ DASHBOARD-UI/
+AVENTISIA/
+└─ KnowledgeHub UI/
    ├─ public/
+   │  ├─ favicon.svg
+   │  ├─ icons.svg
+   │  └─ image.png
    ├─ src/
    │  ├─ assets/
+   │  │  └─ image.png
    │  ├─ components/
    │  │  ├─ common/
-   │  │  ├─ dashboard/
-   │  │  ├─ insights/
-   │  │  ├─ layout/
-   │  │  ├─ transaction/
-   │  │  └─ ThemeProvider.jsx
-   │  ├─ constants/
-   │  ├─ data/
-   │  ├─ local/
+   │  │  │  ├─ Button.jsx
+   │  │  │  ├─ Card.jsx
+   │  │  │  └─ SearchInput.jsx
+   │  │  ├─ constants/
+   │  │  │  └─ ui.js
+   │  │  ├─ Header.jsx
+   │  │  ├─ Modal.jsx
+   │  │  └─ Sidebar.jsx
+   │  ├─ layout/
+   │  │  └─ MainLayout.jsx
    │  ├─ pages/
-   │  ├─ redux/
-   │  │  ├─ slices/
-   │  │  └─ store.js
+   │  │  └─ Home.jsx
    │  ├─ App.jsx
+   │  ├─ index.css
    │  └─ main.jsx
+   ├─ .gitignore
+   ├─ eslint.config.js
+   ├─ index.html
+   ├─ package-lock.json
+   ├─ package.json
+   ├─ README.md
+   └─ vite.config.js
+
 ```
 
 ---
