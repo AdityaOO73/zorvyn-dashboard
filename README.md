@@ -226,29 +226,56 @@ Ensures:
 ## 📂 Project Structure
 
 ```bash id="struct-final"
-AVENTISIA/
-└─ KnowledgeHub UI/
+ZORVYN/
+└─ DASHBOARD-UI/
    ├─ public/
    │  ├─ favicon.svg
-   │  ├─ icons.svg
-   │  └─ image.png
+   │  └─ icons.svg
    ├─ src/
    │  ├─ assets/
-   │  │  └─ image.png
+   │  │  ├─ logo.jpeg
+   │  │  ├─ profile.png
+   │  │  └─ vite.svg
    │  ├─ components/
    │  │  ├─ common/
-   │  │  │  ├─ Button.jsx
-   │  │  │  ├─ Card.jsx
-   │  │  │  └─ SearchInput.jsx
-   │  │  ├─ constants/
-   │  │  │  └─ ui.js
-   │  │  ├─ Header.jsx
-   │  │  ├─ Modal.jsx
-   │  │  └─ Sidebar.jsx
-   │  ├─ layout/
-   │  │  └─ MainLayout.jsx
+   │  │  │  └─ ComingSoon.jsx
+   │  │  ├─ dashboard/
+   │  │  │  ├─ BalanceChart.jsx
+   │  │  │  ├─ CategoryChart.jsx
+   │  │  │  ├─ MyCard.jsx
+   │  │  │  ├─ QuickTransaction.jsx
+   │  │  │  ├─ SummaryCards.jsx
+   │  │  │  └─ TransactionHistory.jsx
+   │  │  ├─ insights/
+   │  │  │  ├─ CategoryBreakdown.jsx
+   │  │  │  ├─ ExpenseChart.jsx
+   │  │  │  ├─ SmartInsights.jsx
+   │  │  │  └─ StatsCards.jsx
+   │  │  ├─ layout/
+   │  │  │  ├─ Layout.jsx
+   │  │  │  ├─ Navbar.jsx
+   │  │  │  └─ Sidebar.jsx
+   │  │  ├─ transaction/
+   │  │  │  └─ TransactionModal.jsx
+   │  │  └─ ThemeProvider.jsx
+   │  ├─ constants/
+   │  │  └─ colors.js
+   │  ├─ data/
+   │  │  └─ mockData.js
+   │  ├─ local/
+   │  │  └─ english.json
    │  ├─ pages/
-   │  │  └─ Home.jsx
+   │  │  ├─ Cards.jsx
+   │  │  ├─ Dashboard.jsx
+   │  │  ├─ Insights.jsx
+   │  │  ├─ Payments.jsx
+   │  │  ├─ Settings.jsx
+   │  │  └─ Transactions.jsx
+   │  ├─ redux/
+   │  │  ├─ slices/
+   │  │  │  ├─ transactionSlice.js
+   │  │  │  └─ uiSlice.js
+   │  │  └─ store.js
    │  ├─ App.jsx
    │  ├─ index.css
    │  └─ main.jsx
@@ -258,6 +285,7 @@ AVENTISIA/
    ├─ package-lock.json
    ├─ package.json
    ├─ README.md
+   ├─ tailwind.config.js
    └─ vite.config.js
 
 ```
