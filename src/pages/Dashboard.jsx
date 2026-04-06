@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { getColors } from "../constants/colors";
-import SummaryCards from "../components/dashboard/SummaryCards"; 
+import SummaryCards from "../components/dashboard/SummaryCards";
 import BalanceChart from "../components/dashboard/BalanceChart";
 import CategoryChart from "../components/dashboard/CategoryChart";
 import QuickTransaction from "../components/dashboard/QuickTransaction";
@@ -21,42 +21,48 @@ export default function Dashboard() {
     .filter((t) => t.type === "expense")
     .reduce((a, b) => a + b.amount, 0);
 
-  // const balance = income - expense;
-
   return (
     <div
-      style={{ minHeight: "100vh" }}
-      className="w-full xl:ml-0 lg:ml-0 grid grid-cols-1 xl:grid-cols-4 gap-6 p-4"
+      style={{ minHeight: "100vh", fontFamily: "Poppins" }}
+      className="w-full xl:ml-0 lg:ml-0 grid grid-cols-1 xl:grid-cols-4 gap-6 p-4 font-poppins"
     >
       <div className="xl:col-span-3 space-y-6">
         <SummaryCards income={income} expense={expense} />
 
         <div className="grid lg:grid-cols-2 gap-6">
           <div
-            className="p-5 rounded-2xl transition-all duration-300 hover:scale-[1.01]"
+            className="p-5 rounded-2xl transition-all duration-300 hover:scale-[1.01] font-poppins"
             style={{
               background: COLORS.card,
               boxShadow: isDark
                 ? "0 10px 30px rgba(0,0,0,0.5)"
                 : "0 10px 25px rgba(0,0,0,0.08)",
+              fontFamily: "Poppins",
             }}
           >
-            <h2 style={{ color: COLORS.text }} className="mb-3 font-semibold">
+            <h2
+              style={{ color: COLORS.text, fontFamily: "Poppins" }}
+              className="mb-3 font-semibold"
+            >
               {TEXTS.spendingBreakdown}
             </h2>
             <CategoryChart data={data} />
           </div>
 
           <div
-            className="p-5 rounded-2xl transition-all duration-300 hover:scale-[1.01]"
+            className="p-5 rounded-2xl transition-all duration-300 hover:scale-[1.01] font-poppins"
             style={{
               background: COLORS.card,
               boxShadow: isDark
                 ? "0 10px 30px rgba(0,0,0,0.5)"
                 : "0 10px 25px rgba(0,0,0,0.08)",
+              fontFamily: "Poppins",
             }}
           >
-            <h2 style={{ color: COLORS.text }} className="mb-3 font-semibold">
+            <h2
+              style={{ color: COLORS.text, fontFamily: "Poppins" }}
+              className="mb-3 font-semibold"
+            >
               {TEXTS.finances}
             </h2>
             <BalanceChart data={data} />
@@ -71,10 +77,17 @@ export default function Dashboard() {
         <QuickTransaction />
 
         <div
-          className="p-5 rounded-2xl border"
-          style={{ backgroundColor: COLORS.card, borderColor: COLORS.border }}
+          className="p-5 rounded-2xl border font-poppins"
+          style={{
+            backgroundColor: COLORS.card,
+            borderColor: COLORS.border,
+            fontFamily: "Poppins",
+          }}
         >
-          <h3 style={{ color: COLORS.text }} className="mb-4 font-semibold">
+          <h3
+            style={{ color: COLORS.text, fontFamily: "Poppins" }}
+            className="mb-4 font-semibold"
+          >
             {TEXTS.myGoals}
           </h3>
 
@@ -87,8 +100,8 @@ export default function Dashboard() {
 }
 
 const Goal = ({ title, percent, COLORS }) => (
-  <div className="mb-3">
-    <p style={{ color: COLORS.text }}>{title}</p>
+  <div className="mb-3 font-poppins" style={{ fontFamily: "Poppins" }}>
+    <p style={{ color: COLORS.text, fontFamily: "Poppins" }}>{title}</p>
 
     <div style={{ background: COLORS.border }} className="h-2 rounded mt-1">
       <div

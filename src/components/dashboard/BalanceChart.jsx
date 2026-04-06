@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import { getColors } from "../../constants/colors";
 import TEXTS from "../../local/english.json";
 
+
 export default function BalanceChart({ data }) {
   const isDark = useSelector((s) => s.ui.isDark);
   const COLORS = getColors(isDark);
@@ -37,11 +38,11 @@ export default function BalanceChart({ data }) {
   );
 
   if (!chartData.length) {
-    return <div className="text-center opacity-60">No data</div>;
+    return <div className="text-center opacity-60 font-poppins">No data</div>;
   }
 
   return (
-    <div className="w-full h-64 sm:h-72 lg:h-80">
+    <div className="w-full h-64 sm:h-72 lg:h-80 font-poppins">
       <ResponsiveContainer>
         <ComposedChart data={chartData}>
           <CartesianGrid
@@ -52,7 +53,7 @@ export default function BalanceChart({ data }) {
 
           <XAxis
             dataKey="date"
-            tick={{ fill: COLORS.muted, fontSize: 10 }}
+            tick={{ fill: COLORS.muted, fontSize: 10, fontFamily: "Poppins" }}
             axisLine={false}
             tickLine={false}
             angle={-30}
@@ -61,7 +62,7 @@ export default function BalanceChart({ data }) {
           />
 
           <YAxis
-            tick={{ fill: COLORS.muted, fontSize: 10 }}
+            tick={{ fill: COLORS.muted, fontSize: 10, fontFamily: "Poppins" }}
             axisLine={false}
             tickLine={false}
           />
@@ -72,6 +73,7 @@ export default function BalanceChart({ data }) {
               border: `0px solid ${COLORS.border}`,
               borderRadius: "12px",
               color: COLORS.text,
+              fontFamily: "Poppins",
             }}
             formatter={(value, name) => [
               `${TEXTS.currency}${value}`,
@@ -79,7 +81,7 @@ export default function BalanceChart({ data }) {
             ]}
           />
 
-          <Legend wrapperStyle={{ fontSize: "12px" }} />
+          <Legend wrapperStyle={{ fontSize: "12px", fontFamily: "Poppins" }} />
 
           <Bar
             dataKey="expense"

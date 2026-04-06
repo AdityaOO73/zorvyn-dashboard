@@ -60,7 +60,13 @@ export default function Transactions() {
       accessorKey: "amount",
       header: "Amount",
       Cell: ({ cell }) => (
-        <span style={{ color: COLORS.text, fontWeight: 600 }}>
+        <span
+          style={{
+            color: COLORS.text,
+            fontWeight: 600,
+            fontFamily: "Poppins",
+          }}
+        >
           ₹{cell.getValue()}
         </span>
       ),
@@ -84,6 +90,7 @@ export default function Transactions() {
               padding: "4px 10px",
               borderRadius: "999px",
               fontSize: "12px",
+              fontFamily: "Poppins",
             }}
           >
             {isIncome ? "Income" : "Expense"}
@@ -97,7 +104,7 @@ export default function Transactions() {
           {
             header: "Action",
             Cell: ({ row }) => (
-              <div className="flex gap-3 items-center">
+              <div className="flex gap-3 items-center font-poppins">
                 <FiEdit2
                   onClick={() => {
                     setModalData(row.original);
@@ -140,6 +147,7 @@ export default function Transactions() {
         borderRadius: "16px",
         border: `1px solid ${COLORS.border}`,
         backgroundColor: COLORS.card,
+        fontFamily: "Poppins",
       },
     },
 
@@ -148,6 +156,7 @@ export default function Transactions() {
         maxHeight: "500px",
         overflowY: "auto",
         backgroundColor: COLORS.card,
+        fontFamily: "Poppins",
       },
     },
 
@@ -163,6 +172,7 @@ export default function Transactions() {
         backgroundColor: COLORS.surface,
         color: COLORS.text,
         borderBottom: `1px solid ${COLORS.border}`,
+        fontFamily: "Poppins",
         "& .MuiSvgIcon-root": {
           color: COLORS.text,
         },
@@ -172,6 +182,7 @@ export default function Transactions() {
     muiTableBodyProps: {
       sx: {
         backgroundColor: COLORS.card,
+        fontFamily: "Poppins",
       },
     },
 
@@ -180,6 +191,7 @@ export default function Transactions() {
         backgroundColor: COLORS.card,
         color: COLORS.text,
         borderBottom: `1px solid ${COLORS.border}`,
+        fontFamily: "Poppins",
         "& .MuiSvgIcon-root": {
           color: COLORS.text,
         },
@@ -199,6 +211,7 @@ export default function Transactions() {
         backgroundColor: COLORS.card,
         color: COLORS.text,
         borderBottom: `1px solid ${COLORS.border}`,
+        fontFamily: "Poppins",
         "& .MuiSvgIcon-root": {
           color: COLORS.text,
         },
@@ -207,7 +220,7 @@ export default function Transactions() {
 
     muiSearchTextFieldProps: {
       sx: {
-        input: { color: COLORS.text },
+        input: { color: COLORS.text, fontFamily: "Poppins" },
         "& .MuiSvgIcon-root": {
           color: COLORS.text,
         },
@@ -216,7 +229,7 @@ export default function Transactions() {
 
     muiFilterTextFieldProps: {
       sx: {
-        input: { color: COLORS.text },
+        input: { color: COLORS.text, fontFamily: "Poppins" },
         "& .MuiSvgIcon-root": {
           color: COLORS.text,
         },
@@ -226,6 +239,7 @@ export default function Transactions() {
     muiPaginationProps: {
       sx: {
         color: COLORS.text,
+        fontFamily: "Poppins",
         "& .MuiSvgIcon-root": {
           color: COLORS.text,
         },
@@ -236,6 +250,7 @@ export default function Transactions() {
       sx: {
         backgroundColor: COLORS.card,
         borderTop: `1px solid ${COLORS.border}`,
+        fontFamily: "Poppins",
         "& .MuiSvgIcon-root": {
           color: COLORS.text,
         },
@@ -245,6 +260,7 @@ export default function Transactions() {
     muiTableFooterProps: {
       sx: {
         backgroundColor: COLORS.card,
+        fontFamily: "Poppins",
       },
     },
   });
@@ -252,10 +268,11 @@ export default function Transactions() {
   return (
     <>
       <div
-        className="w-full mt-4 rounded-2xl p-4 shadow-sm border min-w-0"
+        className="w-full mt-4 rounded-2xl p-4 shadow-sm border min-w-0 font-poppins"
         style={{
           backgroundColor: COLORS.card,
           borderColor: COLORS.border,
+          fontFamily: "Poppins",
         }}
       >
         <div className="flex flex-wrap items-center justify-between gap-4 mb-4 min-w-0">
@@ -263,21 +280,23 @@ export default function Transactions() {
             <input
               placeholder="Search..."
               onChange={(e) => dispatch(setSearch(e.target.value))}
-              className="px-4 py-2 rounded-lg min-w-0"
+              className="px-4 py-2 rounded-lg min-w-0 font-poppins"
               style={{
                 backgroundColor: COLORS.surface,
                 border: `1px solid ${COLORS.border}`,
                 color: COLORS.text,
+                fontFamily: "Poppins",
               }}
             />
 
             <select
               onChange={(e) => dispatch(setFilter(e.target.value))}
-              className="px-4 py-2 rounded-lg"
+              className="px-4 py-2 rounded-lg font-poppins"
               style={{
                 backgroundColor: COLORS.surface,
                 border: `1px solid ${COLORS.border}`,
                 color: COLORS.text,
+                fontFamily: "Poppins",
               }}
             >
               <option value="all">All</option>
@@ -289,10 +308,11 @@ export default function Transactions() {
           <div className="flex gap-2 flex-wrap">
             <button
               onClick={downloadCSV}
-              className="px-4 py-2 rounded-lg text-sm"
+              className="px-4 py-2 rounded-lg text-sm font-poppins"
               style={{
                 backgroundColor: COLORS.surface,
                 color: COLORS.text,
+                fontFamily: "Poppins",
               }}
             >
               Export CSV
@@ -300,9 +320,10 @@ export default function Transactions() {
 
             {role === "admin" && (
               <button
-                className="px-5 py-2 rounded-lg text-white"
+                className="px-5 py-2 rounded-lg text-white font-poppins"
                 style={{
                   background: `linear-gradient(to right, ${COLORS.primary}, ${COLORS.purple})`,
+                  fontFamily: "Poppins",
                 }}
                 onClick={() => {
                   setModalData({

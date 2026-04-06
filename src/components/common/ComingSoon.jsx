@@ -1,6 +1,6 @@
 export default function ComingSoon({ title }) {
   return (
-    <div className="flex items-center justify-center min-h-[60vh]">
+    <div className="flex items-center justify-center min-h-[60vh] font-poppins">
       <div className="text-center px-6 py-10 rounded-2xl border border-(--border) bg-(--card) shadow-sm">
 
         {/* Title */}

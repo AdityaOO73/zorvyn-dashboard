@@ -11,7 +11,7 @@ export default function SummaryCards({ income, expense }) {
   const balance = income - expense;
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 font-poppins">
       <Card
         title={TEXTS.balance}
         value={balance}
@@ -42,11 +42,12 @@ export default function SummaryCards({ income, expense }) {
 function Card({ title, value, color, COLORS, icon }) {
   return (
     <div
-      className="relative p-4 sm:p-5 rounded-2xl overflow-hidden"
+      className="relative p-4 sm:p-5 rounded-2xl overflow-hidden font-poppins"
       style={{
         background: COLORS.surface,
         border: `1px solid ${COLORS.border}`,
         boxShadow: `0 10px 30px ${COLORS.shadow || "rgba(0,0,0,0.08)"}`,
+        fontFamily: "Poppins",
       }}
     >
       <div
@@ -58,12 +59,15 @@ function Card({ title, value, color, COLORS, icon }) {
         <div>
           <p
             className="text-xs sm:text-sm mb-1"
-            style={{ color: COLORS.muted }}
+            style={{ color: COLORS.muted, fontFamily: "Poppins" }}
           >
             {title}
           </p>
 
-          <h1 className="text-lg sm:text-2xl font-bold" style={{ color }}>
+          <h1
+            className="text-lg sm:text-2xl font-bold"
+            style={{ color, fontFamily: "Poppins" }}
+          >
             {TEXTS.currency}
             {value}
           </h1>
@@ -74,6 +78,7 @@ function Card({ title, value, color, COLORS, icon }) {
           style={{
             background: `${color}20`,
             color: color,
+            fontFamily: "Poppins",
           }}
         >
           {icon}

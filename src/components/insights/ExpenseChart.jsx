@@ -70,15 +70,16 @@ export default function ExpenseChart() {
 
   return (
     <div
-      className="p-5 rounded-2xl border"
+      className="p-5 rounded-2xl border font-poppins"
       style={{
         background: COLORS.card,
         borderColor: COLORS.border,
+        fontFamily: "Poppins",
       }}
     >
       <h2
         className="text-sm font-semibold mb-4"
-        style={{ color: COLORS.text }}
+        style={{ color: COLORS.text, fontFamily: "Poppins" }}
       >
         {TEXTS.expenseBreakdown}
       </h2>
@@ -92,10 +93,10 @@ export default function ExpenseChart() {
 
           <XAxis
             dataKey="category"
-            tick={{ fill: COLORS.muted, fontSize: 12 }}
+            tick={{ fill: COLORS.muted, fontSize: 12, fontFamily: "Poppins" }}
           />
           <YAxis
-            tick={{ fill: COLORS.muted, fontSize: 12 }}
+            tick={{ fill: COLORS.muted, fontSize: 12, fontFamily: "Poppins" }}
           />
 
           <Tooltip
@@ -104,10 +105,11 @@ export default function ExpenseChart() {
               border: `1px solid ${COLORS.border}`,
               borderRadius: "10px",
               color: COLORS.text,
+              fontFamily: "Poppins",
             }}
           />
 
-          <Legend />
+          <Legend wrapperStyle={{ fontFamily: "Poppins" }} />
 
           <Bar
             dataKey="amount"
@@ -115,7 +117,6 @@ export default function ExpenseChart() {
             shape={renderBar}
           />
 
-         
           <Line
             type="monotone"
             dataKey="amount"
@@ -125,7 +126,6 @@ export default function ExpenseChart() {
             dot={false}
           />
 
-      
           <Line
             type="monotone"
             dataKey="trend"

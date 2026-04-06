@@ -11,9 +11,10 @@ export default function Insights() {
 
   return (
     <div
-      className="p-6 space-y-6 min-h-screen"
+      className="p-6 space-y-6 min-h-screen font-poppins"
       style={{
         color: COLORS.text,
+        fontFamily: "Poppins",
       }}
     >
       <StatsCards />
@@ -22,6 +23,7 @@ export default function Insights() {
         <ExpenseChart />
         <CategoryBreakdown />
       </div>
+
       <SmartInsights />
     </div>
   );

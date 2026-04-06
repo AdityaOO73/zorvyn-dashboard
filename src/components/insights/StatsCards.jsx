@@ -12,14 +12,18 @@ export default function StatsCards() {
   const data = useSelector((s) => s.transactions);
   const isDark = useSelector((s) => s.ui.isDark);
   const COLORS = getColors(isDark);
+
   const income = data
     .filter((t) => t.type === "income")
     .reduce((a, b) => a + b.amount, 0);
+
   const expense = data
     .filter((t) => t.type === "expense")
     .reduce((a, b) => a + b.amount, 0);
+
   const savings = income - expense;
   const savingsRate = income ? (savings / income) * 100 : 0;
+
   const cibilScore = Math.min(
     900,
     Math.max(300, 650 + Math.floor(savingsRate)),
@@ -27,28 +31,25 @@ export default function StatsCards() {
 
   const getCibilColor = () => {
     if (cibilScore > 750) return COLORS.success;
-    if (cibilScore > 600) return "#f59e0b"; // yellow
+    if (cibilScore > 600) return "#f59e0b";
     return COLORS.danger;
   };
 
   const tips = {
     income: income > expense ? TEXTS.incomeGood : TEXTS.incomeLow,
-
     expense: expense > income * 0.7 ? TEXTS.expenseHigh : TEXTS.expenseOk,
-
     savings:
       savingsRate > 30
         ? TEXTS.savingsGreat
         : savingsRate > 10
-          ? TEXTS.savingsAverage
-          : TEXTS.savingsLow,
-
+        ? TEXTS.savingsAverage
+        : TEXTS.savingsLow,
     cibil:
       cibilScore > 750
         ? TEXTS.cibilExcellent
         : cibilScore > 600
-          ? TEXTS.cibilAverage
-          : TEXTS.cibilLow,
+        ? TEXTS.cibilAverage
+        : TEXTS.cibilLow,
   };
 
   const cards = [
@@ -87,14 +88,15 @@ export default function StatsCards() {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 font-poppins">
       {cards.map((card, i) => (
         <div
           key={i}
-          className="p-4 rounded-xl border backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:shadow-lg relative overflow-hidden min-h-140px"
+          className="p-4 rounded-xl border backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:shadow-lg relative overflow-hidden min-h-140px font-poppins"
           style={{
             background: COLORS.card,
             borderColor: COLORS.border,
+            fontFamily: "Poppins",
           }}
         >
           <div
@@ -110,6 +112,7 @@ export default function StatsCards() {
               style={{
                 background: `${card.color}20`,
                 color: card.color,
+                fontFamily: "Poppins",
               }}
             >
               {card.icon}
@@ -120,6 +123,7 @@ export default function StatsCards() {
               style={{
                 background: COLORS.hover,
                 color: COLORS.muted,
+                fontFamily: "Poppins",
               }}
             >
               {TEXTS.thisMonth}
@@ -128,14 +132,14 @@ export default function StatsCards() {
 
           <p
             className="text-sm font-medium mb-1"
-            style={{ color: COLORS.muted }}
+            style={{ color: COLORS.muted, fontFamily: "Poppins" }}
           >
             {card.title}
           </p>
 
           <h2
             className="text-xl font-bold tracking-wide"
-            style={{ color: card.color }}
+            style={{ color: card.color, fontFamily: "Poppins" }}
           >
             {card.isCurrency
               ? `${TEXTS.currency}${card.value.toLocaleString()}`
@@ -144,7 +148,7 @@ export default function StatsCards() {
 
           <p
             className="text-sm mt-2 leading-relaxed"
-            style={{ color: COLORS.muted }}
+            style={{ color: COLORS.muted, fontFamily: "Poppins" }}
           >
             {card.tip}
           </p>

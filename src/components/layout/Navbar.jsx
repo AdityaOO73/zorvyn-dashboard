@@ -15,12 +15,13 @@ export default function Navbar() {
   const { role, isDark } = useSelector((s) => s.ui);
   const COLORS = getColors(isDark);
   const hour = new Date().getHours();
+
   let greeting = "Good Evening";
   if (hour < 12) greeting = "Good Morning";
   else if (hour < 17) greeting = "Good Afternoon";
 
   return (
-    <div className="fixed top-0 left-0 lg:left-64 right-0 z-20 px-2 sm:px-4 lg:px-6 py-2">
+    <div className="fixed top-0 left-0 lg:left-64 right-0 z-20 px-2 sm:px-4 lg:px-6 py-2 font-poppins">
       <div className="w-full mx-auto">
         <div
           className="flex items-center justify-between rounded-full px-3 sm:px-4 lg:px-6 py-2"
@@ -33,13 +34,14 @@ export default function Navbar() {
               ? "0 6px 20px rgba(0,0,0,0.5)"
               : "0 6px 20px rgba(37, 99, 235, 0.08)",
             backdropFilter: "blur(8px)",
+            fontFamily: "Poppins",
           }}
         >
           <div className="flex items-center gap-2 sm:gap-3">
             <button
               onClick={() => dispatch(toggleSidebar())}
               className="lg:hidden text-lg sm:text-xl"
-              style={{ color: COLORS.text }}
+              style={{ color: COLORS.text, fontFamily: "Poppins" }}
             >
               <FiMenu />
             </button>
@@ -52,12 +54,13 @@ export default function Navbar() {
               />
               <span
                 className="hidden sm:block text-sm sm:text-base"
-                style={{ color: COLORS.text }}
+                style={{ color: COLORS.text, fontFamily: "Poppins" }}
               >
                 {TEXTS.brandName}
               </span>
             </div>
           </div>
+
           <div className="flex items-center gap-2 sm:gap-3">
             <FiBell
               className="text-sm sm:text-base"
@@ -70,6 +73,7 @@ export default function Navbar() {
               style={{
                 borderColor: COLORS.border,
                 color: COLORS.text,
+                fontFamily: "Poppins",
               }}
             >
               {isDark ? <FiSun size={16} /> : <FiMoon size={16} />}
@@ -87,6 +91,7 @@ export default function Navbar() {
                     ? "linear-gradient(90deg, #2563eb, #3b82f6)"
                     : COLORS.surface,
                 color: role === "admin" ? "#fff" : COLORS.text,
+                fontFamily: "Poppins",
               }}
             >
               {role}
@@ -101,18 +106,24 @@ export default function Navbar() {
               />
 
               <div className="hidden sm:flex flex-col leading-tight">
-                <span className="text-[10px]" style={{ color: COLORS.muted }}>
+                <span
+                  className="text-[10px]"
+                  style={{ color: COLORS.muted, fontFamily: "Poppins" }}
+                >
                   {greeting}
                 </span>
 
                 <span
                   className="text-xs sm:text-sm font-semibold"
-                  style={{ color: COLORS.text }}
+                  style={{ color: COLORS.text, fontFamily: "Poppins" }}
                 >
                   ADITYA
                 </span>
 
-                <span className="text-[12px]" style={{ color: COLORS.primary }}>
+                <span
+                  className="text-[12px]"
+                  style={{ color: COLORS.primary, fontFamily: "Poppins" }}
+                >
                   {role}
                 </span>
               </div>

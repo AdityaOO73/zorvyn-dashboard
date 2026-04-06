@@ -33,6 +33,7 @@ export default function Sidebar() {
       : "transparent",
     color: isActive ? COLORS.primary : COLORS.muted,
     fontSize: "14px",
+    fontFamily: "Poppins",
   });
 
   const iconStyle = (isActive) => ({
@@ -52,7 +53,7 @@ export default function Sidebar() {
       )}
 
       <div
-        className={`fixed top-0 left-0 h-screen w-64 flex flex-col justify-between z-50 transform transition-transform duration-300
+        className={`fixed top-0 left-0 h-screen w-64 flex flex-col justify-between z-50 transform transition-transform duration-300 font-poppins
         ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} 
         lg:translate-x-0`}
         style={{
@@ -63,6 +64,7 @@ export default function Sidebar() {
           boxShadow: isDark
             ? "0 8px 30px rgba(0,0,0,0.6)"
             : "0 8px 30px rgba(37, 99, 235, 0.08)",
+          fontFamily: "Poppins",
         }}
       >
         <div className="flex flex-col h-full overflow-y-auto px-3 py-4">
@@ -70,7 +72,7 @@ export default function Sidebar() {
             <div className="flex items-center justify-between mb-6 px-2">
               <h1
                 className="text-lg sm:text-xl font-bold flex items-center gap-2"
-                style={{ color: COLORS.text }}
+                style={{ color: COLORS.text, fontFamily: "Poppins" }}
               >
                 <img
                   src={logo}
@@ -83,7 +85,7 @@ export default function Sidebar() {
               <button
                 className="lg:hidden"
                 onClick={() => dispatch(toggleSidebar())}
-                style={{ color: COLORS.text }}
+                style={{ color: COLORS.text, fontFamily: "Poppins" }}
               >
                 <FiX size={22} />
               </button>
@@ -118,6 +120,7 @@ export default function Sidebar() {
                       style={{
                         backgroundColor: COLORS.border,
                         color: COLORS.text,
+                        fontFamily: "Poppins",
                       }}
                     >
                       {TEXTS.pro}
@@ -155,10 +158,10 @@ export default function Sidebar() {
             </div>
           </div>
 
-          <div className="mt-auto pt-4">
+          <div className="mt-4 lg:mt-auto pt-4">
             <button
-              className="flex items-center gap-3 px-4 py-2.5 rounded-xl w-full text-sm transition"
-              style={{ color: COLORS.muted }}
+              className="flex items-center gap-3 px-4 py-2.5 rounded-xl w-full text-sm transition font-poppins"
+              style={{ color: COLORS.muted, fontFamily: "Poppins" }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = COLORS.danger;
                 e.currentTarget.style.color = "#fff";

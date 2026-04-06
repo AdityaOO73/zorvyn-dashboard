@@ -52,16 +52,17 @@ export default function CategoryBreakdown() {
 
   return (
     <div
-      className="p-6 rounded-2xl border grid grid-cols-1 md:grid-cols-2 gap-6 backdrop-blur-md"
+      className="p-6 rounded-2xl border grid grid-cols-1 md:grid-cols-2 gap-6 backdrop-blur-md font-poppins"
       style={{
         background: COLORS.card,
         borderColor: COLORS.border,
+        fontFamily: "Poppins",
       }}
     >
       <div>
         <h2
           className="text-base font-semibold mb-4"
-          style={{ color: COLORS.text }}
+          style={{ color: COLORS.text, fontFamily: "Poppins" }}
         >
           {TEXTS.topCategories}
         </h2>
@@ -71,7 +72,7 @@ export default function CategoryBreakdown() {
             <div className="flex justify-between items-center mb-1">
               <span
                 className="text-sm font-medium flex items-center gap-2"
-                style={{ color: COLORS.text }}
+                style={{ color: COLORS.text, fontFamily: "Poppins" }}
               >
                 <span>{icons[cat] || ""}</span>
                 {cat}
@@ -79,7 +80,7 @@ export default function CategoryBreakdown() {
 
               <span
                 className="text-sm font-semibold"
-                style={{ color: COLORS.text }}
+                style={{ color: COLORS.text, fontFamily: "Poppins" }}
               >
                 {TEXTS.currency}
                 {amt}
@@ -94,6 +95,7 @@ export default function CategoryBreakdown() {
                 className={`h-2.5 rounded-full bg-linear-to-r ${gradients[i % gradients.length]} transition-all duration-700`}
                 style={{
                   width: `${(amt / max) * 100}%`,
+                  fontFamily: "Poppins",
                 }}
               />
             </div>
@@ -110,7 +112,7 @@ export default function CategoryBreakdown() {
             <PolarAngleAxis
               dataKey="category"
               stroke={COLORS.muted}
-              tick={{ fontSize: 12 }}
+              tick={{ fontSize: 12, fontFamily: "Poppins" }}
             />
             <Radar
               dataKey="value"

@@ -27,18 +27,21 @@ export default function TransactionModal({
 
   return (
     <div
-      className="fixed inset-0 flex items-center justify-center z-50"
-      style={{ background: "rgba(0,0,0,0.5)" }}
+      className="fixed inset-0 flex items-center justify-center z-50 font-poppins"
+      style={{ background: "rgba(0,0,0,0.5)", fontFamily: "Poppins" }}
     >
       <div
-        className="w-350px rounded-2xl overflow-hidden shadow-xl"
-        style={{ backgroundColor: COLORS.card }}
+        className="w-350px rounded-2xl overflow-hidden shadow-xl font-poppins"
+        style={{ backgroundColor: COLORS.card, fontFamily: "Poppins" }}
       >
         <div
           className="flex justify-between items-center px-5 py-4 border-b"
           style={{ borderColor: COLORS.border }}
         >
-          <h2 className="text-lg font-semibold" style={{ color: COLORS.text }}>
+          <h2
+            className="text-lg font-semibold"
+            style={{ color: COLORS.text, fontFamily: "Poppins" }}
+          >
             {form.id ? TEXTS.editTransaction : TEXTS.addTransaction}
           </h2>
 
@@ -49,18 +52,22 @@ export default function TransactionModal({
 
         <div className="p-5 space-y-4">
           <div>
-            <p className="text-sm mb-1" style={{ color: COLORS.muted }}>
+            <p
+              className="text-sm mb-1"
+              style={{ color: COLORS.muted, fontFamily: "Poppins" }}
+            >
               {TEXTS.type}
             </p>
 
             <select
               value={form.type}
               onChange={(e) => setForm({ ...form, type: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg focus:outline-none"
+              className="w-full px-3 py-2 rounded-lg focus:outline-none font-poppins"
               style={{
                 backgroundColor: COLORS.surface,
                 border: `1px solid ${COLORS.border}`,
                 color: COLORS.text,
+                fontFamily: "Poppins",
               }}
             >
               <option value="income">{TEXTS.income}</option>
@@ -69,7 +76,10 @@ export default function TransactionModal({
           </div>
 
           <div>
-            <p className="text-sm mb-1" style={{ color: COLORS.muted }}>
+            <p
+              className="text-sm mb-1"
+              style={{ color: COLORS.muted, fontFamily: "Poppins" }}
+            >
               {TEXTS.category}
             </p>
 
@@ -77,24 +87,28 @@ export default function TransactionModal({
               value={form.category}
               onChange={(e) => setForm({ ...form, category: e.target.value })}
               placeholder="e.g. Groceries"
-              className="w-full px-3 py-2 rounded-lg focus:outline-none"
+              className="w-full px-3 py-2 rounded-lg focus:outline-none font-poppins"
               style={{
                 backgroundColor: COLORS.surface,
                 border: `1px solid ${COLORS.border}`,
                 color: COLORS.text,
+                fontFamily: "Poppins",
               }}
             />
           </div>
 
           <div>
-            <p className="text-sm mb-1" style={{ color: COLORS.muted }}>
+            <p
+              className="text-sm mb-1"
+              style={{ color: COLORS.muted, fontFamily: "Poppins" }}
+            >
               {TEXTS.amount}
             </p>
 
             <div className="relative">
               <span
                 className="absolute left-3 top-2.5 text-sm"
-                style={{ color: COLORS.muted }}
+                style={{ color: COLORS.muted, fontFamily: "Poppins" }}
               >
                 ₹
               </span>
@@ -109,18 +123,22 @@ export default function TransactionModal({
                   setForm({ ...form, amount: value });
                 }}
                 placeholder="0.00"
-                className="w-full pl-7 pr-3 py-2 rounded-lg focus:outline-none"
+                className="w-full pl-7 pr-3 py-2 rounded-lg focus:outline-none font-poppins"
                 style={{
                   backgroundColor: COLORS.surface,
                   border: `1px solid ${COLORS.border}`,
                   color: COLORS.text,
+                  fontFamily: "Poppins",
                 }}
               />
             </div>
           </div>
 
           <div>
-            <p className="text-sm mb-1" style={{ color: COLORS.muted }}>
+            <p
+              className="text-sm mb-1"
+              style={{ color: COLORS.muted, fontFamily: "Poppins" }}
+            >
               {TEXTS.date}
             </p>
 
@@ -128,11 +146,12 @@ export default function TransactionModal({
               type="date"
               value={form.date}
               onChange={(e) => setForm({ ...form, date: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg focus:outline-none"
+              className="w-full px-3 py-2 rounded-lg focus:outline-none font-poppins"
               style={{
                 backgroundColor: COLORS.surface,
                 border: `1px solid ${COLORS.border}`,
                 color: COLORS.text,
+                fontFamily: "Poppins",
               }}
             />
           </div>
@@ -141,18 +160,19 @@ export default function TransactionModal({
         <div className="flex justify-end gap-3 px-5 py-4">
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-lg"
-            style={{ color: COLORS.muted }}
+            className="px-4 py-2 rounded-lg font-poppins"
+            style={{ color: COLORS.muted, fontFamily: "Poppins" }}
           >
             Cancel
           </button>
 
           <button
             onClick={handleSubmit}
-            className="px-4 py-2 rounded-lg font-medium"
+            className="px-4 py-2 rounded-lg font-medium font-poppins"
             style={{
               background: `linear-gradient(to right, ${COLORS.primary}, ${COLORS.purple})`,
               color: "#fff",
+              fontFamily: "Poppins",
             }}
           >
             {form.id ? "Update" : "Create Transaction"}

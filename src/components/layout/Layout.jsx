@@ -5,8 +5,8 @@ import Navbar from "./Navbar";
 export default function Layout() {
   return (
     <div
-      className="flex min-h-screen transition-all duration-300"
-      style={{ background: "var(--bg)" }}
+      className="flex min-h-screen transition-all duration-300 font-poppins"
+      style={{ background: "var(--bg)", fontFamily: "Poppins" }}
     >
       <Sidebar />
       <div className="flex-1 w-full lg:ml-64">

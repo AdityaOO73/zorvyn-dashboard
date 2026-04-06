@@ -23,18 +23,18 @@ export default function QuickTransaction() {
 
   return (
     <div
-      className="p-4 sm:p-5 rounded-2xl space-y-4 sm:space-y-5 w-full"
+      className="p-4 sm:p-5 rounded-2xl space-y-4 sm:space-y-5 w-full font-poppins"
       style={{
         background: COLORS.card,
         border: `1px solid ${COLORS.border}`,
         boxShadow: `0 10px 30px ${COLORS.shadow || "rgba(0,0,0,0.08)"}`,
+        fontFamily: "Poppins",
       }}
     >
-      {/* Header */}
       <div className="flex justify-between items-center">
         <h3
           className="font-semibold flex items-center gap-2 text-sm sm:text-base"
-          style={{ color: COLORS.text }}
+          style={{ color: COLORS.text, fontFamily: "Poppins" }}
         >
           <FiSend size={16} />
           {TEXTS.quickTransfer}
@@ -42,13 +42,12 @@ export default function QuickTransaction() {
 
         <span
           className="text-xs sm:text-sm cursor-pointer hover:underline"
-          style={{ color: COLORS.primary }}
+          style={{ color: COLORS.primary, fontFamily: "Poppins" }}
         >
           {TEXTS.viewAll}
         </span>
       </div>
 
-      {/* Users */}
       <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-2">
         {users.map((u, i) => {
           const active = selected === i;
@@ -67,6 +66,7 @@ export default function QuickTransaction() {
                     : COLORS.surface,
                   color: active ? "#fff" : COLORS.text,
                   transform: active ? "scale(1.1)" : "scale(1)",
+                  fontFamily: "Poppins",
                 }}
               >
                 <FiUser size={18} />
@@ -76,6 +76,7 @@ export default function QuickTransaction() {
                 className="text-[10px] sm:text-xs mt-1 truncate w-14"
                 style={{
                   color: active ? COLORS.primary : COLORS.muted,
+                  fontFamily: "Poppins",
                 }}
               >
                 {u.label}
@@ -85,11 +86,10 @@ export default function QuickTransaction() {
         })}
       </div>
 
-      {/* Input */}
       <div className="relative">
         <span
           className="absolute left-3 top-2 text-sm"
-          style={{ color: COLORS.muted }}
+          style={{ color: COLORS.muted, fontFamily: "Poppins" }}
         >
           ₹
         </span>
@@ -104,6 +104,7 @@ export default function QuickTransaction() {
             background: COLORS.surface,
             border: `1px solid ${COLORS.border}`,
             color: COLORS.text,
+            fontFamily: "Poppins",
           }}
         />
 
@@ -114,7 +115,6 @@ export default function QuickTransaction() {
         />
       </div>
 
-      {/* Quick Amount */}
       <div className="flex gap-2 flex-wrap">
         {quickAmounts.map((amt) => (
           <button
@@ -125,6 +125,7 @@ export default function QuickTransaction() {
               background: COLORS.surface,
               color: COLORS.text,
               border: `1px solid ${COLORS.border}`,
+              fontFamily: "Poppins",
             }}
           >
             ₹{amt}
@@ -132,12 +133,12 @@ export default function QuickTransaction() {
         ))}
       </div>
 
-      {/* Send */}
       <button
         className="w-full py-2 text-sm sm:text-base rounded-lg font-medium flex items-center justify-center gap-2"
         style={{
           background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.purple})`,
           color: "#fff",
+          fontFamily: "Poppins",
         }}
       >
         <FiSend size={14} />
@@ -146,7 +147,7 @@ export default function QuickTransaction() {
 
       <p
         className="text-[10px] sm:text-xs text-center flex items-center justify-center gap-1"
-        style={{ color: COLORS.muted }}
+        style={{ color: COLORS.muted, fontFamily: "Poppins" }}
       >
         <FiZap size={10} />
         Instant & secure transfer
